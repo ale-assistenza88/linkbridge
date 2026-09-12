@@ -1,6 +1,6 @@
 # LinkBridge Privacy Policy
 
-**Last updated: August 30, 2026**
+**Last updated: September 12, 2026**
 
 LinkBridge is a browser extension designed to help users process links from supported container pages and copy the resolved destination URLs for use with a download manager.
 
@@ -34,11 +34,11 @@ This information is used only to provide the extension's functionality and is no
 
 ## Website Access
 
-LinkBridge requires access to supported FileCrypt container domains in order to detect container links.
+LinkBridge requires access to supported FileCrypt container domains to detect container links and operate the user-initiated Clean Mode.
 
-When the user explicitly starts link resolution, LinkBridge may request permission to access external HTTP and HTTPS websites. This is necessary because container links can redirect to destination hosts that cannot be known in advance.
+When the user starts resolution, LinkBridge may request permission to access external HTTP and HTTPS hosts because container redirects can lead to destination domains that cannot be known in advance.
 
-Network requests made during resolution are sent directly from the user's browser to the relevant websites.
+Network requests used for resolution go directly from the user's browser to the websites involved in the redirect chain.
 
 LinkBridge does not use this access to monitor the user's general browsing activity.
 
@@ -65,6 +65,22 @@ Requests made directly to supported container websites and destination websites 
 LinkBridge does not download or execute remote code as part of the extension.
 
 The executable code required for LinkBridge is included in the extension package distributed through the Chrome Web Store.
+
+## Clean Mode
+
+LinkBridge includes an optional Clean Mode started explicitly by the user. Clean Mode opens a supported FileCrypt container in a focused window so the user can complete any required CAPTCHA manually.
+
+During that Clean Mode session, LinkBridge may intercept unrelated top-level advertising redirects and return the same temporary window to the supported container flow.
+
+LinkBridge does not bypass or solve CAPTCHAs automatically.
+
+## Local Download Manager Delivery
+
+When JDownloader is running, LinkBridge may send the resolved destination URLs directly from the browser to JDownloader's local Click'n'Load interface on the user's own computer (localhost / 127.0.0.1).
+
+This transfer is initiated as part of the user's link-resolution action. The resolved URLs are not sent to a LinkBridge-operated server.
+
+If local delivery is unavailable, LinkBridge can use the clipboard as a fallback.
 
 ## Third-Party Services
 
